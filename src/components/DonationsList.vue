@@ -56,6 +56,7 @@ onMounted(async () => {
 .donations-grid {
   display: grid;
   grid-template-columns: 1fr;
+  grid-auto-rows: minmax(120px, auto);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   justify-items: stretch;
