@@ -3,7 +3,7 @@ import DonationsList from './components/DonationsList.vue';
 </script>
 
 <template>
-  <img id="logo" src="logo.svg" />
+  <img id="logo" src="/logo.svg" />
   <h1 class="heading">A fundraiser for #TeamSeas</h1>
   <p>
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt cumque
