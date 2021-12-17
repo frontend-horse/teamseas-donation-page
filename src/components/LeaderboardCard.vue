@@ -16,7 +16,6 @@ defineProps<{ donation: Donation }>();
 
 <template>
   <div class="card">
-    <!-- <img src="/logo.svg" class="background" alt="" /> -->
     <div class="details">
       <p class="name">{{ donation.display_name }}</p>
       <span class="amount">
@@ -28,27 +27,22 @@ defineProps<{ donation: Donation }>();
 
 <style scoped>
 .card {
-  padding: 0.5rem 0;
-}
-.background {
-  opacity: 0.05;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
-  height: auto;
-  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left:0.5rem;
 }
 
 .details {
+  width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .name {
-  flex-grow: 1;
-  font-weight: 700;
-  font-size: 1.2rem;
+  padding: 0;
   margin: 0;
 }
 </style>
