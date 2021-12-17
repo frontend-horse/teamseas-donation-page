@@ -7,16 +7,17 @@ export default {
 <script setup lang="ts">
 import { Donation } from '@/interfaces/Donation';
 
-const getDisplayMessage = (message: string) =>
-  message.length > 0 ? message : 'No ';
-
 // eslint-disable-next-line no-undef
 defineProps<{ donation: Donation }>();
 </script>
 
 <template>
   <div class="card">
-    <img src="/logo.svg" class="background" alt="" />
+    <img
+      class="background"
+      src="/logo.svg"
+      alt="Frontend Horse: Holiday Snowtacular logo"
+    />
     <div class="details">
       <p class="name">{{ donation.display_name }}</p>
       <span class="amount">${{ donation.donation }}</span>
