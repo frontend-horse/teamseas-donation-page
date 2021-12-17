@@ -47,9 +47,15 @@ onMounted(async () => {
     Something went wrong! Please try again later...
   </p>
   <div v-else class="donations-grid">
-    <template v-for="(donation, index) in donations" :key="donation.id">
-      <LeaderboardCard v-if="index < 5" :donation="donation" />
-    </template>
+    <ol class="leaderboard-list">
+      <li
+        v-for="(donation, index) in donations"
+        :key="donation.id"
+        class="leaderboard-item"
+      >
+        <LeaderboardCard v-if="index < 10" :donation="donation" />
+      </li>
+    </ol>
   </div>
 </template>
 
@@ -72,5 +78,19 @@ onMounted(async () => {
     0.1px 12.1px 13.8px -2.4px hsl(var(--shadow-color) / 0.37);
   max-width: 32rem;
   margin: 0 auto;
+}
+
+.leaderboard-list {
+  padding: 0 1rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.leaderboard-item {
+  padding: 0.5rem 0;
+  flex-grow: 1;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0;
 }
 </style>
