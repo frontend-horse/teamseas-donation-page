@@ -1,19 +1,14 @@
 <script setup lang="ts">
 import DonationsList from './components/DonationsList.vue';
-import DonationLeaderboard from './components/DonationLeaderboard.vue';
 </script>
 
 <template>
-  <img id="logo" src="/logo.svg" />
+  <img
+    id="logo"
+    src="/logo.svg"
+    alt="Frontend Horse: Holiday Snowtacular logo"
+  />
   <h1 class="heading">A fundraiser for #TeamSeas</h1>
-  <section class="description">
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt cumque
-      maiores quia a rerum! Reprehenderit, pariatur eius. Assumenda ipsa alias
-      sint doloremque voluptas deleniti, eum, minima tempore ducimus beatae
-      cumque.
-    </p>
-  </section>
   <div class="button-group">
     <a class="button" href="https://lu.ma/fh-holiday-2021">
       Register for Event
@@ -22,9 +17,41 @@ import DonationLeaderboard from './components/DonationLeaderboard.vue';
       Donate to Team Seas
     </a>
   </div>
-
-  <h1 class="heading">Leaderboard</h1>
-  <DonationLeaderboard />
+  <h1 class="heading">12 Special Guests</h1>
+  <section class="guests">
+    <ul>
+      <li>Dave Rupert</li>
+      <li>Kevin Powell</li>
+      <li>George Francis</li>
+      <li>Monica Powell</li>
+      <li>Michael Chan</li>
+      <li>Josh Comeau</li>
+      <li>Kent C. Dodds</li>
+      <li>Chris Coyier</li>
+      <li>Varun Vachhar</li>
+      <li>Cassidy Williams</li>
+      <li>Scott Hanselman</li>
+      <li>Amelia Wattenberger</li>
+    </ul>
+  </section>
+  <h1 class="heading">A huge thanks to our company sponsors</h1>
+  <section class="sponsors">
+    <a href="https://prismic.io/">
+      <img src="/sponsors/prismic.svg" alt="Prismic logo" />
+    </a>
+    <a href="https://www.netlify.com/">
+      <img src="/sponsors/netlify.png" alt="Netlify logo" />
+    </a>
+    <a href="https://cloudinary.com/">
+      <img src="/sponsors/cloudinary.png" alt="Cloudinary logo" />
+    </a>
+    <a href="https://stepzen.com/">
+      <img src="/sponsors/stepzen.svg" alt="StepZen logo" />
+    </a>
+    <a href="https://orbit.love/">
+      <img id="orbit-logo" src="/sponsors/orbit.svg" alt="Orbit logo" />
+    </a>
+  </section>
   <h1 class="heading">All the lovely people who donated!</h1>
   <DonationsList />
 </template>
@@ -84,9 +111,86 @@ body {
   border-radius: 1.2rem;
   transition: background 0.1s ease;
   font-weight: bold;
+  text-align: center;
 }
 
 .button:hover {
   background: #41627d;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(120px, auto);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
+  padding-bottom: 64px;
+}
+
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guests ul {
+    flex-direction: column;
+  }
+}
+
+.sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sponsors img {
+  width: 320px;
+  height: auto;
+  object-fit: contain;
+}
+
+#orbit-logo {
+  width: 250px;
+}
+
+.guests {
+  max-width: 64rem;
+  margin: 2rem auto;
+}
+
+.guests h2 {
+  text-align: center;
+}
+.guests ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  text-align: center;
+  list-style: none;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.guests li:nth-child(even) {
+  color: #d04447;
 }
 </style>

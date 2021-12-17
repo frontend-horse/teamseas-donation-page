@@ -39,7 +39,7 @@ onMounted(async () => {
   <p v-else-if="errorOccurred" id="error-message">
     Something went wrong! Please try again later...
   </p>
-  <div v-else class="donations-grid">
+  <div v-else class="grid">
     <DonationCard
       v-for="donation in donations"
       :key="donation.id"
@@ -51,34 +51,5 @@ onMounted(async () => {
 <style scoped>
 #error-message {
   text-align: center;
-}
-
-.donations-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: minmax(120px, auto);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  justify-items: stretch;
-  align-items: stretch;
-  padding-bottom: 64px;
-}
-
-@media (min-width: 992px) {
-  .donations-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .donations-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 576px) {
-  .donations-grid {
-    grid-template-columns: 1fr;
-  }
 }
 </style>
