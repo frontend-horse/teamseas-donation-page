@@ -52,7 +52,6 @@ import DonationsList from './components/DonationsList.vue';
       <img id="orbit-logo" src="/sponsors/orbit.svg" alt="Orbit logo" />
     </a>
   </section>
-  <h1 class="heading">All the lovely people who donated!</h1>
   <DonationsList />
 </template>
 
@@ -61,7 +60,7 @@ import DonationsList from './components/DonationsList.vue';
 
 html,
 body {
-  margin: 0;
+  margin: 0 0 32px 0;
   padding: 0;
   width: 100%;
   height: 100%;
@@ -156,7 +155,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 3.5rem;
 }
 
 .sponsors img {

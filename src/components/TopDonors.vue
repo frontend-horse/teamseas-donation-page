@@ -5,10 +5,10 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { Donation } from '@/interfaces/Donation';
+import { TopDonor } from '@/interfaces/TopDonor';
 
 // eslint-disable-next-line no-undef
-defineProps<{ donation: Donation }>();
+defineProps<{ donors: TopDonor[] | null }>();
 </script>
 
 <template>
@@ -18,13 +18,11 @@ defineProps<{ donation: Donation }>();
       src="/logo.svg"
       alt="Frontend Horse: Holiday Snowtacular logo"
     />
-    <div class="details">
-      <p class="name">{{ donation?.display_name }}</p>
-      <span class="amount">${{ donation?.donation }}</span>
-    </div>
-    <p v-if="donation?.message_public" class="message">
-      {{ donation.message_public }}
-    </p>
+    <ol>
+      <li v-for="donor in donors" :key="donor.display_name">
+        <strong>{{ donor.display_name }}</strong> - ${{ donor.donation }}
+      </li>
+    </ol>
   </div>
 </template>
 
