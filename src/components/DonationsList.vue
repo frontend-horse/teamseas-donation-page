@@ -30,7 +30,7 @@ onMounted(async () => {
     }
 
     latestDonations.value =
-      data?.sort((a, b) => b.created_at - a.created_at).slice(0, 9) || null;
+      data?.sort((a, b) => b.created_at - a.created_at) || null;
 
     topDonors.value =
       data
@@ -58,12 +58,17 @@ onMounted(async () => {
 </script>
 
 <template>
-  <h1 class="heading">Our latest donations</h1>
   <LoadingSpinner v-if="isLoading" />
   <p v-else-if="errorOccurred" id="error-message">
     Something went wrong! Please try again later...
   </p>
   <div v-else>
+    <section class="">
+      <h2 style="margin-top: 0" class="heading">Donation Leaderboard</h2>
+      <TopDonors :donors="topDonors" />
+    </section>
+    <article class="all-donations">
+      <h2 class="heading">All Donations</h2>
     <div class="grid">
       <DonationCard
         v-for="donation in latestDonations"
@@ -71,10 +76,7 @@ onMounted(async () => {
         :donation="donation"
       />
     </div>
-    <h1 style="margin-top: 0" class="heading">And our all-time top donors</h1>
-    <div id="top-donors">
-      <TopDonors :donors="topDonors" />
-    </div>
+    </article>
   </div>
 </template>
 
