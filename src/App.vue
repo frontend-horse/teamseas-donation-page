@@ -3,21 +3,12 @@ import DonationsList from './components/DonationsList.vue';
 </script>
 
 <template>
-  <img
-    id="logo"
-    src="/logo.svg"
-    alt="Frontend Horse: Holiday Snowtacular logo"
-  />
-  <h1 class="heading">A fundraiser for #TeamSeas</h1>
-  <div class="button-group">
-    <a class="button" href="https://lu.ma/fh-holiday-2021">
-      Register for Event
-    </a>
-    <a class="button" href="https://frontend.horse/donate">
-      Donate to Team Seas
-    </a>
-  </div>
-  <h1 class="heading">12 Special Guests</h1>
+  <h1>
+    <img id="logo" src="/logo.svg" alt="Frontend Horse: Holiday Snowtacular" />
+  </h1>
+  <h2 class="heading">A fundraiser for #TeamSeas</h2>
+
+  <h2 class="heading">12 Special Guests</h2>
   <section class="guests">
     <ul>
       <li>Dave Rupert</li>
