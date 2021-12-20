@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import InlineSvg from 'vue-inline-svg';
 import DonationsList from './components/DonationsList.vue';
-import VueYouTubeEmbed from 'vue-youtube-embed';
 </script>
 
 <template>
