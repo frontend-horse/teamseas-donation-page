@@ -1,12 +1,29 @@
 <script setup lang="ts">
+import InlineSvg from 'vue-inline-svg';
 import DonationsList from './components/DonationsList.vue';
 </script>
 
 <template>
   <h1>
-    <img id="logo" src="/logo.svg" alt="Frontend Horse: Holiday Snowtacular" />
+    <inline-svg
+      src="/logo.svg"
+      fill="black"
+      aria-label="Frontend Horse: Holiday Snowtacular"
+    ></inline-svg>
   </h1>
   <h2>A fundraiser for #TeamSeas</h2>
+
+  <div class="video-wrapper">
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube-nocookie.com/embed/_tbgg8-q5pY"
+      title="Holiday Snowtacular Live Stream"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
 
   <h2>12 Special Guests</h2>
   <section class="guests">
@@ -25,8 +42,9 @@ import DonationsList from './components/DonationsList.vue';
       <li>Amelia Wattenberger</li>
     </ul>
   </section>
-  <h2>A huge thanks to our company sponsors</h2>
   <section class="sponsors">
+    <h2>A huge thanks to our company sponsors</h2>
+
     <a href="https://prismic.io/">
       <img src="/sponsors/prismic.svg" alt="Prismic logo" />
     </a>
@@ -59,8 +77,6 @@ body {
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #334d62;
-  background-color: #ecf3f9;
   display: flex;
   justify-content: center;
 }
@@ -141,6 +157,9 @@ body {
   justify-content: center;
   align-items: center;
   gap: 3.5rem;
+  background: #eee;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) var(--color-shadow);
 }
 
 .sponsors img {
@@ -180,5 +199,18 @@ body {
 
 .guests li:nth-child(even) {
   color: var(--color);
+}
+
+.svg-red {
+  fill: var(--color);
+}
+.svg-blue {
+  fill: var(--color-secondary);
+}
+
+.video-wrapper {
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 </style>

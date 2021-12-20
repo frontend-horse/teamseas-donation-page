@@ -30,8 +30,8 @@ defineProps<{ donors: TopDonor[] | null }>();
 
 <style scoped>
 .card {
-  --shadow-color: 208deg 16% 60%;
-  background-color: white;
+  --shadow-color: var(--color-shadow);
+  background-color: var(--color-bg-secondary);
   border-radius: 10px;
   padding: 2rem 1.5rem;
   position: relative;
