@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import InlineSvg from 'vue-inline-svg';
 import DonationsList from './components/DonationsList.vue';
+import VueYouTubeEmbed from 'vue-youtube-embed';
 </script>
 
 <template>
@@ -15,8 +16,9 @@ import DonationsList from './components/DonationsList.vue';
 
   <div class="video-wrapper">
     <iframe
-      width="560"
-      height="315"
+      width="100%"
+      height="auto"
+      style="aspect-ratio: 16 / 9; max-width: 700px"
       src="https://www.youtube-nocookie.com/embed/_tbgg8-q5pY"
       title="Holiday Snowtacular Live Stream"
       frameborder="0"
@@ -42,24 +44,25 @@ import DonationsList from './components/DonationsList.vue';
       <li>Amelia Wattenberger</li>
     </ul>
   </section>
-  <section class="sponsors">
+  <section class="sponsor-section">
     <h2>A huge thanks to our company sponsors</h2>
-
-    <a href="https://prismic.io/">
-      <img src="/sponsors/prismic.svg" alt="Prismic logo" />
-    </a>
-    <a href="https://www.netlify.com/">
-      <img src="/sponsors/netlify.png" alt="Netlify logo" />
-    </a>
-    <a href="https://cloudinary.com/">
-      <img src="/sponsors/cloudinary.png" alt="Cloudinary logo" />
-    </a>
-    <a href="https://stepzen.com/">
-      <img src="/sponsors/stepzen.svg" alt="StepZen logo" />
-    </a>
-    <a href="https://orbit.love/">
-      <img id="orbit-logo" src="/sponsors/orbit.svg" alt="Orbit logo" />
-    </a>
+    <div class="sponsors">
+      <a href="https://prismic.io/">
+        <img src="/sponsors/prismic.svg" alt="Prismic logo" />
+      </a>
+      <a href="https://www.netlify.com/">
+        <img src="/sponsors/netlify.png" alt="Netlify logo" />
+      </a>
+      <a href="https://cloudinary.com/">
+        <img src="/sponsors/cloudinary.png" alt="Cloudinary logo" />
+      </a>
+      <a href="https://stepzen.com/">
+        <img src="/sponsors/stepzen.svg" alt="StepZen logo" />
+      </a>
+      <a href="https://orbit.love/">
+        <img id="orbit-logo" src="/sponsors/orbit.svg" alt="Orbit logo" />
+      </a>
+    </div>
   </section>
   <DonationsList />
 </template>
@@ -151,15 +154,17 @@ body {
   }
 }
 
+.sponsor-section {
+  background: var(--sponsor-background);
+  border-radius: var(--border-radius);
+}
+
 .sponsors {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 3.5rem;
-  background: #eee;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow) var(--color-shadow);
 }
 
 .sponsors img {
@@ -212,5 +217,6 @@ body {
   margin: auto;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 </style>
