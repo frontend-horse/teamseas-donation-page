@@ -20,7 +20,9 @@ defineProps<{ donors: TopDonor[] | null }>();
     />
     <ol>
       <li v-for="donor in donors" :key="donor.display_name">
-        <strong>{{ donor.display_name }}</strong> - ${{ donor.donation }}
+        <span class="name">{{ donor.display_name }}</span> - ${{
+          donor.donation
+        }}
       </li>
     </ol>
   </div>
@@ -31,9 +33,14 @@ defineProps<{ donors: TopDonor[] | null }>();
   --shadow-color: 208deg 16% 60%;
   background-color: white;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 2rem 1.5rem;
   position: relative;
   overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
   box-shadow: 0px 0.6px 0.7px hsl(var(--shadow-color) / 0.35),
     0px 2px 2.3px -0.8px hsl(var(--shadow-color) / 0.35),
     0px 5px 5.7px -1.6px hsl(var(--shadow-color) / 0.36),
@@ -57,7 +64,14 @@ defineProps<{ donors: TopDonor[] | null }>();
 .name {
   flex-grow: 1;
   font-weight: 700;
-  font-size: 1.2rem;
   margin: 0;
+}
+
+li {
+  font-size: 1.5rem;
+}
+
+li + li {
+  margin-top: 10px;
 }
 </style>
