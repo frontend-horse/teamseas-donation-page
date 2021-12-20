@@ -6,9 +6,9 @@ import DonationsList from './components/DonationsList.vue';
   <h1>
     <img id="logo" src="/logo.svg" alt="Frontend Horse: Holiday Snowtacular" />
   </h1>
-  <h2 class="heading">A fundraiser for #TeamSeas</h2>
+  <h2>A fundraiser for #TeamSeas</h2>
 
-  <h2 class="heading">12 Special Guests</h2>
+  <h2>12 Special Guests</h2>
   <section class="guests">
     <ul>
       <li>Dave Rupert</li>
@@ -25,7 +25,7 @@ import DonationsList from './components/DonationsList.vue';
       <li>Amelia Wattenberger</li>
     </ul>
   </section>
-  <h2 class="heading">A huge thanks to our company sponsors</h2>
+  <h2>A huge thanks to our company sponsors</h2>
   <section class="sponsors">
     <a href="https://prismic.io/">
       <img src="/sponsors/prismic.svg" alt="Prismic logo" />
@@ -72,12 +72,6 @@ body {
 #logo {
   display: block;
   margin: 32px auto 0 auto;
-}
-
-.heading {
-  color: #d04447;
-  margin-top: 48px;
-  text-align: center;
 }
 
 .description {
@@ -180,7 +174,11 @@ body {
   margin: 0;
 }
 
+.guests {
+  color: var(--color-secondary);
+}
+
 .guests li:nth-child(even) {
-  color: #d04447;
+  color: var(--color);
 }
 </style>

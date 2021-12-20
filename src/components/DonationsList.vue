@@ -64,8 +64,10 @@ onMounted(async () => {
   </p>
   <div v-else>
     <section class="">
-      <h2 style="margin-top: 0" class="heading">Donation Leaderboard</h2>
-      <TopDonors :donors="topDonors" />
+      <div>
+        <h2>Donation Leaderboard</h2>
+        <TopDonors :donors="topDonors" />
+      </div>
     </section>
     <article class="all-donations">
       <h2 class="heading">All Donations</h2>

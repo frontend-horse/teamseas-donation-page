@@ -36,7 +36,7 @@ defineProps<{ donors: TopDonor[] | null }>();
   padding: 2rem 1.5rem;
   position: relative;
   overflow: hidden;
-
+  color: var(--color-secondary);
   display: flex;
   justify-content: center;
   width: fit-content;

@@ -30,7 +30,7 @@ defineProps<{ donation: Donation }>();
 
 <style scoped>
 .card {
-  --shadow-color: 208deg 16% 60%;
+  --shadow-color: 208deg 16% 90%;
   background-color: white;
   border-radius: 10px;
   padding: 1rem;
@@ -61,5 +61,6 @@ defineProps<{ donation: Donation }>();
   font-weight: 700;
   font-size: 1.2rem;
   margin: 0;
+  color: var(--color-secondary);
 }
 </style>
