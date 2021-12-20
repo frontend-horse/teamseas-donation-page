@@ -25,7 +25,7 @@ import DonationsList from './components/DonationsList.vue';
       <li>Amelia Wattenberger</li>
     </ul>
   </section>
-  <h1 class="heading">A huge thanks to our company sponsors</h1>
+  <h2 class="heading">A huge thanks to our company sponsors</h2>
   <section class="sponsors">
     <a href="https://prismic.io/">
       <img src="/sponsors/prismic.svg" alt="Prismic logo" />
