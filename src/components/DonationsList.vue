@@ -69,13 +69,13 @@ onMounted(async () => {
     </section>
     <article class="all-donations">
       <h2 class="heading">All Donations</h2>
-    <div class="grid">
-      <DonationCard
-        v-for="donation in latestDonations"
-        :key="donation.id"
-        :donation="donation"
-      />
-    </div>
+      <div class="grid">
+        <DonationCard
+          v-for="donation in latestDonations"
+          :key="donation.id"
+          :donation="donation"
+        />
+      </div>
     </article>
   </div>
 </template>
@@ -83,11 +83,5 @@ onMounted(async () => {
 <style scoped>
 #error-message {
   text-align: center;
-}
-
-#top-donors {
-  padding-bottom: 3rem;
-  display: flex;
-  justify-content: center;
 }
 </style>
