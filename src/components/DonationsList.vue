@@ -62,10 +62,6 @@ onMounted(async () => {
     sponsorDonations.value = sponsorDonationIDs.map((id) =>
       data.find((item) => item.id === id)
     );
-    console.log(
-      '🚀 ~ file: DonationsList.vue ~ line 65 ~ onMounted ~ sponsorDonations',
-      sponsorDonations
-    );
   } catch (error) {
     errorOccurred.value = true;
   } finally {
