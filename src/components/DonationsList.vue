@@ -1,10 +1,10 @@
-<script lang="ts">
+<script>
 export default {
   name: 'DonationsList'
 };
 </script>
 
-<script setup lang="ts">
+<script setup>
 import { ref, onMounted } from 'vue';
 
 import LoadingSpinner from './LoadingSpinner.vue';
@@ -12,21 +12,19 @@ import DonationCard from './DonationCard.vue';
 import TopDonors from './TopDonors.vue';
 
 import { supabase } from '@/supabase';
-import { Donation } from '@/interfaces/Donation';
-import { TopDonor } from '@/interfaces/TopDonor';
 
 const isLoading = ref(true);
 const errorOccurred = ref(false);
 
-const topDonors = ref<TopDonor[] | null>(null);
-const allDonations = ref<Donation[] | null>(null);
-let totalDonationAmount = ref<number>(0);
+const topDonors = ref(null);
+const allDonations = ref(null);
+let totalDonationAmount = ref(0);
 const sponsorDonationIDs = [8748308, 8749386, 8751610];
-let sponsorDonations = ref<Donation[] | null>(null);
+let sponsorDonations = ref(null);
 
 onMounted(async () => {
   try {
-    const { data, error } = await supabase.from<Donation>('team_seas').select();
+    const { data, error } = await supabase.from('team_seas').select();
 
     if (error) {
       throw error;
@@ -41,7 +39,7 @@ onMounted(async () => {
 
     topDonors.value =
       data
-        ?.reduce((donorsArr: TopDonor[], { display_name, donation, id }) => {
+        ?.reduce((donorsArr, { display_name, donation, id }) => {
           const currentNameEntryIndex = donorsArr.findIndex(
             (donor) => donor.display_name === display_name
           );
