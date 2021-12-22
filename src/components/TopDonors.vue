@@ -1,14 +1,17 @@
-<script lang="ts">
+<script>
+import { toRefs } from 'vue';
+
 export default {
-  name: 'DonationCard'
+  name: 'DonationCard',
+  props: {
+    donors: { type: Array, required: true },
+
+    numbered: { type: Boolean, required: false, default: true }
+  },
+  setup(props) {
+    const { numbered, donors = [] } = toRefs(props);
+  }
 };
-</script>
-
-<script setup lang="ts">
-import { TopDonor } from '@/interfaces/TopDonor';
-
-// eslint-disable-next-line no-undef
-defineProps<{ donors: TopDonor[] | null }>();
 </script>
 
 <template>
@@ -18,13 +21,13 @@ defineProps<{ donors: TopDonor[] | null }>();
       src="/logo.svg"
       alt="Frontend Horse: Holiday Snowtacular logo"
     />
-    <ol>
+    <component :is="numbered ? 'ol' : 'ul'">
       <li v-for="donor in donors" :key="donor.display_name">
         <span class="name">{{ donor.display_name }}</span> - ${{
           donor.donation
         }}
       </li>
-    </ol>
+    </component>
   </div>
 </template>
 

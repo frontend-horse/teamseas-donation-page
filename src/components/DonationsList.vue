@@ -19,7 +19,7 @@ const errorOccurred = ref(false);
 const topDonors = ref(null);
 const allDonations = ref(null);
 let totalDonationAmount = ref(0);
-const sponsorDonationIDs = [8748308, 8749386, 8751610];
+const sponsorDonationIDs = [8748308, 8749386, 8751610, 9086562];
 let sponsorDonations = ref(null);
 
 onMounted(async () => {
@@ -77,13 +77,13 @@ onMounted(async () => {
     <section class="">
       <div>
         <h2>Donation Leaderboard</h2>
-        <TopDonors :donors="topDonors" />
+        <TopDonors :donors="topDonors" :numbered="true" />
       </div>
     </section>
     <section class="">
       <div>
         <h2>Sponsor Donations</h2>
-        <TopDonors :donors="sponsorDonations" />
+        <TopDonors :donors="sponsorDonations" :numbered="false" />
       </div>
     </section>
     <section>
