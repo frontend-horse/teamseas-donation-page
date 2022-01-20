@@ -19,7 +19,7 @@ const errorOccurred = ref(false);
 const topDonors = ref(null);
 const allDonations = ref(null);
 let totalDonationAmount = ref(0);
-const sponsorDonationIDs = [8748308, 8749386, 8751610, 9086562];
+const sponsorDonationIDs = [8748308, 8749386, 8751610, 9086562, 9315870];
 let sponsorDonations = ref(null);
 
 onMounted(async () => {
@@ -88,7 +88,9 @@ onMounted(async () => {
     </section>
     <section>
       <h2>Total Amount Donated</h2>
-      <p class="donation-total">${{ totalDonationAmount }}</p>
+      <p class="donation-total">
+        ${{ totalDonationAmount.toLocaleString('en-US') }}
+      </p>
     </section>
     <section class="all-donations">
       <h2 class="heading">All Donations</h2>
